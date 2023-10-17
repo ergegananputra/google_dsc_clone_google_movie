@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/movieDetailFragment2"
+        android:name="com.latihanbyrg.googlemoviewclone.MovieDetailFragment"
+        android:label="fragment_movie_detail"
+        tools:layout="@layout/fragment_movie_detail" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.latihanbyrg.googlemoviewclone.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/watchlistFragment"
+        android:name="com.latihanbyrg.googlemoviewclone.WatchlistFragment"
+        android:label="fragment_watchlist"
+        tools:layout="@layout/fragment_watchlist" />
+    <fragment
+        android:id="@+id/libraryFragment"
+        android:name="com.latihanbyrg.googlemoviewclone.LibraryFragment"
+        android:label="fragment_library"
+        tools:layout="@layout/fragment_library" />
+</navigation>
