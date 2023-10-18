@@ -27,12 +27,498 @@
                 android:drawableRight="@drawable/baseline_keyboard_arrow_right_30"
                 style="@style/TextAppearance.AppCompat.Title"/>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/top_picks_recycler_view"
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/top_picks_recycler_view"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="210dp"-->
+<!--                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--                android:orientation="horizontal" />-->
+
+            <HorizontalScrollView
                 android:layout_width="match_parent"
-                android:layout_height="210dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                android:orientation="horizontal" />
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:fadeScrollbars="false">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:padding="5dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@android:color/transparent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="16dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="250dp"
+                                    android:layout_height="150dp">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/avengers_endgame_poster"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <androidx.appcompat.widget.AppCompatImageButton
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:background="@drawable/bookmark_background_circle"
+                                        android:src="@drawable/bookmark_filled_24"
+                                        android:tint="@color/white"
+                                        android:visibility="gone"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginVertical="5dp"
+                                android:layout_weight="3"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="Avenger End Game"
+                                android:textColor="@color/white" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="175dp"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="IDR 25.000"
+                                    android:textColor="@color/white" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="1"
+                                    android:text="75%"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="@color/white" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:padding="5dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@android:color/transparent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="16dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="250dp"
+                                    android:layout_height="150dp">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/image"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/antman_poster"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <androidx.appcompat.widget.AppCompatImageButton
+                                        android:id="@+id/button_bookmark"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:background="@drawable/bookmark_background_circle"
+                                        android:src="@drawable/bookmark_filled_24"
+                                        android:tint="@color/white"
+                                        android:visibility="gone"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginVertical="5dp"
+                                android:layout_weight="3"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="Antman"
+                                android:textColor="@color/white" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/price"
+                                    android:layout_width="175dp"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="IDR 20.000"
+                                    android:textColor="@color/white" />
+
+                                <TextView
+                                    android:id="@+id/rating"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="1"
+                                    android:text="55%"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="@color/white" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:padding="5dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@android:color/transparent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="16dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="250dp"
+                                    android:layout_height="150dp">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/now_you_see_me_2"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <androidx.appcompat.widget.AppCompatImageButton
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:background="@drawable/bookmark_background_circle"
+                                        android:src="@drawable/bookmark_filled_24"
+                                        android:tint="@color/white"
+                                        android:visibility="gone"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginVertical="5dp"
+                                android:layout_weight="3"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="Now You See Me 2"
+                                android:textColor="@color/white" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="175dp"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="IDR 50.000"
+                                    android:textColor="@color/white" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="1"
+                                    android:text="80%"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="@color/white" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:padding="5dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@android:color/transparent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="16dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="250dp"
+                                    android:layout_height="150dp">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/et_poster"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <androidx.appcompat.widget.AppCompatImageButton
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:background="@drawable/bookmark_background_circle"
+                                        android:src="@drawable/bookmark_filled_24"
+                                        android:tint="@color/white"
+                                        android:visibility="gone"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginVertical="5dp"
+                                android:layout_weight="3"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="E.T. The Extra-Terrestrial"
+                                android:textColor="@color/white" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="175dp"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="IDR 28.000"
+                                    android:textColor="@color/white" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="1"
+                                    android:text="99%"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="@color/white" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:padding="5dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@android:color/transparent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="16dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="250dp"
+                                    android:layout_height="150dp">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/the_lorax_poster"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <androidx.appcompat.widget.AppCompatImageButton
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:background="@drawable/bookmark_background_circle"
+                                        android:src="@drawable/bookmark_filled_24"
+                                        android:tint="@color/white"
+                                        android:visibility="gone"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginVertical="5dp"
+                                android:layout_weight="3"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="Dr. Seuss' The Lorax"
+                                android:textColor="@color/white" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="175dp"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="IDR 28.000"
+                                    android:textColor="@color/white" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="1"
+                                    android:text="54%"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="@color/white" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
 
             <TextView
                 android:id="@+id/popular_movies_title"
@@ -46,12 +532,488 @@
                 android:drawableRight="@drawable/baseline_keyboard_arrow_right_30"
                 style="@style/TextAppearance.AppCompat.Title"/>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/popular_movies_recycler_view"
+            <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                android:orientation="horizontal" />
+                android:scrollbars="none"
+                android:fadeScrollbars="false">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@android:color/transparent"
+                        android:padding="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="16dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="250dp"
+                                    android:layout_height="150dp">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/avengers_endgame_poster"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <androidx.appcompat.widget.AppCompatImageButton
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:background="@drawable/bookmark_background_circle"
+                                        android:src="@drawable/bookmark_filled_24"
+                                        android:tint="@color/white"
+                                        android:visibility="gone"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginVertical="5dp"
+                                android:layout_weight="3"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:textColor="@color/white"
+                                android:text="Avenger End Game" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="175dp"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textColor="@color/white"
+                                    android:text="IDR 25.000" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="1"
+                                    android:text="75%"
+                                    android:textColor="@color/white"
+                                    android:textAlignment="textEnd" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        app:cardBackgroundColor="@android:color/transparent"
+                        app:cardElevation="0dp"
+                        android:padding="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="16dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="250dp"
+                                    android:layout_height="150dp">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/antman_poster"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <androidx.appcompat.widget.AppCompatImageButton
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:background="@drawable/bookmark_background_circle"
+                                        android:src="@drawable/bookmark_filled_24"
+                                        android:tint="@color/white"
+                                        android:visibility="gone"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginVertical="5dp"
+                                android:layout_weight="3"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:textColor="@color/white"
+                                android:text="Antman" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="175dp"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textColor="@color/white"
+                                    android:text="IDR 20.000" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="1"
+                                    android:text="55%"
+                                    android:textColor="@color/white"
+                                    android:textAlignment="textEnd" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        app:cardBackgroundColor="@android:color/transparent"
+                        app:cardElevation="0dp"
+                        android:padding="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="16dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="250dp"
+                                    android:layout_height="150dp">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/now_you_see_me_2"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <androidx.appcompat.widget.AppCompatImageButton
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:background="@drawable/bookmark_background_circle"
+                                        android:src="@drawable/bookmark_filled_24"
+                                        android:tint="@color/white"
+                                        android:visibility="gone"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginVertical="5dp"
+                                android:layout_weight="3"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:textColor="@color/white"
+                                android:text="Now You See Me 2" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="175dp"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textColor="@color/white"
+                                    android:text="IDR 50.000" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="1"
+                                    android:text="80%"
+                                    android:textColor="@color/white"
+                                    android:textAlignment="textEnd" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        app:cardBackgroundColor="@android:color/transparent"
+                        app:cardElevation="0dp"
+                        android:padding="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="16dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="250dp"
+                                    android:layout_height="150dp">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/et_poster"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <androidx.appcompat.widget.AppCompatImageButton
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:background="@drawable/bookmark_background_circle"
+                                        android:src="@drawable/bookmark_filled_24"
+                                        android:tint="@color/white"
+                                        android:visibility="gone"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginVertical="5dp"
+                                android:layout_weight="3"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:textColor="@color/white"
+                                android:text="E.T. The Extra-Terrestrial" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="175dp"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textColor="@color/white"
+                                    android:text="IDR 28.000" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="1"
+                                    android:text="99%"
+                                    android:textColor="@color/white"
+                                    android:textAlignment="textEnd" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        app:cardBackgroundColor="@android:color/transparent"
+                        app:cardElevation="0dp"
+                        android:padding="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="16dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="250dp"
+                                    android:layout_height="150dp">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/the_lorax_poster"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <androidx.appcompat.widget.AppCompatImageButton
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:background="@drawable/bookmark_background_circle"
+                                        android:src="@drawable/bookmark_filled_24"
+                                        android:tint="@color/white"
+                                        android:visibility="gone"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginVertical="5dp"
+                                android:layout_weight="3"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:textColor="@color/white"
+                                android:text="Dr. Seuss' The Lorax" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="175dp"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textColor="@color/white"
+                                    android:text="IDR 28.000" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="1"
+                                    android:text="54%"
+                                    android:textColor="@color/white"
+                                    android:textAlignment="textEnd" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
 
             <TextView
                 android:id="@+id/new_movies_title"
@@ -65,12 +1027,488 @@
                 android:drawableRight="@drawable/baseline_keyboard_arrow_right_30"
                 style="@style/TextAppearance.AppCompat.Title"/>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/new_movies_recycler_view"
+            <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                android:orientation="horizontal" />
+                android:scrollbars="none"
+                android:fadeScrollbars="false">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@android:color/transparent"
+                        android:padding="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="16dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="250dp"
+                                    android:layout_height="150dp">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/avengers_endgame_poster"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <androidx.appcompat.widget.AppCompatImageButton
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:background="@drawable/bookmark_background_circle"
+                                        android:src="@drawable/bookmark_filled_24"
+                                        android:tint="@color/white"
+                                        android:visibility="gone"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginVertical="5dp"
+                                android:layout_weight="3"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:textColor="@color/white"
+                                android:text="Avenger End Game" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="175dp"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textColor="@color/white"
+                                    android:text="IDR 25.000" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="1"
+                                    android:text="75%"
+                                    android:textColor="@color/white"
+                                    android:textAlignment="textEnd" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@android:color/transparent"
+                        android:padding="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="16dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="250dp"
+                                    android:layout_height="150dp">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/antman_poster"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <androidx.appcompat.widget.AppCompatImageButton
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:background="@drawable/bookmark_background_circle"
+                                        android:src="@drawable/bookmark_filled_24"
+                                        android:tint="@color/white"
+                                        android:visibility="gone"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginVertical="5dp"
+                                android:layout_weight="3"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:textColor="@color/white"
+                                android:text="Antman" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="175dp"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textColor="@color/white"
+                                    android:text="IDR 20.000" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="1"
+                                    android:text="55%"
+                                    android:textColor="@color/white"
+                                    android:textAlignment="textEnd" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        app:cardBackgroundColor="@android:color/transparent"
+                        app:cardElevation="0dp"
+                        android:padding="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="16dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="250dp"
+                                    android:layout_height="150dp">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/now_you_see_me_2"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <androidx.appcompat.widget.AppCompatImageButton
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:background="@drawable/bookmark_background_circle"
+                                        android:src="@drawable/bookmark_filled_24"
+                                        android:tint="@color/white"
+                                        android:visibility="gone"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginVertical="5dp"
+                                android:layout_weight="3"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:textColor="@color/white"
+                                android:text="Now You See Me 2" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="175dp"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textColor="@color/white"
+                                    android:text="IDR 50.000" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="1"
+                                    android:text="80%"
+                                    android:textColor="@color/white"
+                                    android:textAlignment="textEnd" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        app:cardBackgroundColor="@android:color/transparent"
+                        app:cardElevation="0dp"
+                        android:padding="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="16dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="250dp"
+                                    android:layout_height="150dp">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/et_poster"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <androidx.appcompat.widget.AppCompatImageButton
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:background="@drawable/bookmark_background_circle"
+                                        android:src="@drawable/bookmark_filled_24"
+                                        android:tint="@color/white"
+                                        android:visibility="gone"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginVertical="5dp"
+                                android:layout_weight="3"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:textColor="@color/white"
+                                android:text="E.T. The Extra-Terrestrial" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="175dp"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textColor="@color/white"
+                                    android:text="IDR 28.000" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="1"
+                                    android:text="99%"
+                                    android:textColor="@color/white"
+                                    android:textAlignment="textEnd" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        app:cardBackgroundColor="@android:color/transparent"
+                        app:cardElevation="0dp"
+                        android:padding="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="16dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="250dp"
+                                    android:layout_height="150dp">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/the_lorax_poster"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <androidx.appcompat.widget.AppCompatImageButton
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:background="@drawable/bookmark_background_circle"
+                                        android:src="@drawable/bookmark_filled_24"
+                                        android:tint="@color/white"
+                                        android:visibility="gone"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginVertical="5dp"
+                                android:layout_weight="3"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:textColor="@color/white"
+                                android:text="Dr. Seuss' The Lorax" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="175dp"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textColor="@color/white"
+                                    android:text="IDR 28.000" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="1"
+                                    android:text="54%"
+                                    android:textColor="@color/white"
+                                    android:textAlignment="textEnd" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
 
             <Space
                 android:layout_width="match_parent"

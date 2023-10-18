@@ -2,6 +2,8 @@ package com.latihanbyrg.googlemoviewclone
 
 import android.util.Log
 import androidx.annotation.WorkerThread
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.asLiveData
 import kotlinx.coroutines.flow.Flow
 
 class MovieRepository(private val movieDao: MovieDao) {

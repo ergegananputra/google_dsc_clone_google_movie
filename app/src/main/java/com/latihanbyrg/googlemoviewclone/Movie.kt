@@ -1,7 +1,6 @@
 package com.latihanbyrg.googlemoviewclone
 
 import android.content.Context
-import androidx.core.content.ContextCompat
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey

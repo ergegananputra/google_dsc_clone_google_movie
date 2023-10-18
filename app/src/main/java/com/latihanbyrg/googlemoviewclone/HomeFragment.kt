@@ -15,7 +15,7 @@ import com.latihanbyrg.googlemoviewclone.databinding.FragmentHomeBinding
  * Use the [HomeFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class HomeFragment(private val movieViewModel: MovieModel) : Fragment(), MovieCardClickListener {
+class HomeFragment(private val movieViewModel: MovieModel) : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = FragmentHomeBinding.inflate(layoutInflater)
@@ -24,25 +24,32 @@ class HomeFragment(private val movieViewModel: MovieModel) : Fragment(), MovieCa
 
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setAllRecyclerView()
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        setAllRecyclerView()
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     private fun setAllRecyclerView() {
-        val layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+
 
         // Top Picks
-        movieViewModel.movieLists.observe(viewLifecycleOwner) {
-            binding.topPicksRecyclerView.apply {
-                this.layoutManager = layoutManager
-                adapter = MovieCardAdapter(it, this@HomeFragment)
-                Log.d("Card", "setAllRecyclerView: $it")
-            }
-        }
+//        movieViewModel.movieLists.observe(viewLifecycleOwner) {
+//            movieCardAdapter = MovieCardAdapter(it, this@HomeFragment)
+//            binding.topPicksRecyclerView.apply {
+//                this.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+//                adapter = movieCardAdapter
+//                Log.d("Card", "setAllRecyclerView: $it")
+//            }
+//        }
+
 
 //        // Popular Movies
 //        movieViewModel.popularMovies.observe(viewLifecycleOwner) {
@@ -67,13 +74,6 @@ class HomeFragment(private val movieViewModel: MovieModel) : Fragment(), MovieCa
 
     }
 
-    override fun onMovieCardClicked(movie: Movie) {
-        TODO("Membuka Detail Movie")
-    }
-
-    override fun onRemoveMovieFromWatchlistClicked(movie: Movie) {
-        TODO("Not yet implemented")
-    }
 
 
 }

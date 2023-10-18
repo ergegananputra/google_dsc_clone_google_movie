@@ -21,6 +21,7 @@ class MovieCardAdapter(
 
     override fun onBindViewHolder(holder: MovieCardViewHolder, position: Int) {
         holder.bindMovieCard(movieCard[position])
+        Log.d("Card", "onBindViewHolder called for position $position")
     }
 
 
