@@ -7,9 +7,13 @@ Google TV merupakan aplikasi yang dibuat oleh Google untuk menonton film. Aplika
 Repository ini berisikan kode interface dan beberapa file kotlin yang tidak terpakai untuk membuat cloning interface aplikasi Google TV.
 
 ### Cara menjalankan
-1. Clone repository ini
-2. Buka folder repository ini dengan Android Studio
-3. Setting emulator dengan compiler API 34 di build.gradle.kts (Module: app)
+1. Buka Android Studio
+2. Get Project from version control (masukkan link dibawah ke dalam URL) atau clone repository ini di directory yang diinginkan
+```URI
+https://github.com/ergegananputra/google_dsc_clone_google_movie.git
+```
+4. Buka folder repository ini dengan Android Studio
+5. Setting emulator dengan compiler API 34 di build.gradle.kts (Module: app)
 ```kotlin
     // ...
 
